@@ -71,7 +71,7 @@ function displayBooks(book){
         ul.appendChild(title1);
         li1.textContent = book.author;
         ul.appendChild(li1);
-        li2.textContent = book.numOfPages;
+        li2.textContent = book.numOfPages + " pages";
         ul.appendChild(li2);
         li3.textContent = book.completed;
         ul.appendChild(li3);
