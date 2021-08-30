@@ -8,12 +8,7 @@ function Book(title, author, numOfPages, completed)
     this.completed = completed;
 
 }
-const book1 = new Book("book1", "yesterday", "100", true);
-const book2 = new Book("book2", "yesterday", "101", true);
-const book3 = new Book("book2", "yesterday", "101", true);
-const book4 = new Book("book2", "yesterday", "101", true);
-const book5 = new Book("book2", "yesterday", "101", true);
-let myLibrary = [book1, book2, book3, book4, book5];
+let myLibrary = [];
 Book.prototype.toString = function(){
     return this.name + " " + this.author + " " + this.numOfPages + " " + this.completed;
 }
@@ -45,6 +40,7 @@ function addBookToLibrary(){
     let book = new Book(title, author, page, status);
     myLibrary.push(book);
     displayBooks(book);
+    document.querySelector(".moadel").style.display = "none";
  
     
 
@@ -56,15 +52,23 @@ function displayBooks(book){
     
         const newCard = document.createElement("div");
         newCard.setAttribute('class', 'card');
-        const title1 = document.createElement("h1");
+        const imgDiv = document.createElement("div");
+        imgDiv.setAttribute('class', 'imgdiv');
+        const img = document.createElement("img");
+        let path = `./images/download.png`;
+        img.setAttribute('src', `${path}`);
+        imgDiv.appendChild(img);
+        newCard.appendChild(imgDiv);
+        const title1 = document.createElement("li");
         title1.textContent = book.title;
-        newCard.appendChild(title1);
+       
         const ul = document.createElement("ul");
 
         let li1 = document.createElement("li");
         let li2 = document.createElement("li");
         let li3 = document.createElement("li");
 
+        ul.appendChild(title1);
         li1.textContent = book.author;
         ul.appendChild(li1);
         li2.textContent = book.numOfPages;
@@ -75,6 +79,7 @@ function displayBooks(book){
         const button = document.createElement("button");
         button.setAttribute('id', 'delete');
         button.setAttribute('class', 'button');
+        button.setAttribute('onClick', "javascript: removeElement();")
         button.textContent = "delete";
         newCard.appendChild(button);
 
@@ -82,3 +87,10 @@ function displayBooks(book){
 
 
 }
+let removeElement = function(){
+    const deletebtn = document.getElementById("delete");
+    let nodeToRemove = deletebtn.parentNode;
+    const librarySection = document.getElementById("library_books");
+    librarySection.removeChild(nodeToRemove);
+}
+

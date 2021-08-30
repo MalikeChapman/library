@@ -7,17 +7,55 @@
     width: 100%;
     top: 0px;
     bottom: 0px;
-    background-color: white;
+    background-color: rgb(183, 196, 223);
+
 }
 #header {
-    height: fit-content;
+    height: 20%;
     width: 100%;
-    background-color: blanchedalmond;
+    background-color: rgb(183, 196, 223);
     align-items: flex-start;
+    /* border-bottom: 3px solid black; */
+
+}
+ul {
+    list-style: none;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imgdiv{
+    background-color: rgba(rgb(122, 121, 121), green, blue, alpha);
+    height: 150px;
+    margin-bottom: 50px;
+}
+img {
+    width: 100%;
+
+    object-fit: contain;
+}
+li {
+    margin: 5px auto;
+    display: list-item;
+    
+}
+h1 {
+    padding: 20px;
+    top: 40px;
 }
 #library_books {
-    background-color: cornsilk;
+    background-color: rgb(183, 196, 223);
+
     width: 100%;
+    height: 100%;
+}
+#add_book {
+    position: absolute;
+    top: 40px;
+    right: 30px;
 }
 .moadel {
     width: 100%;
@@ -60,7 +98,7 @@ input[type="radio"] {
 }
 .close:hover {
     color: #666;
-    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.3);
 }
 #submit{
     display: block;
@@ -79,6 +117,7 @@ input[type="radio"] {
     height: fit-content;
     background-color: rgb(243, 172, 172, 0.7);
     border-radius: 4px;
+    box-shadow: 10px 10px 5px rgb(70, 69, 69);
     
 
 }
@@ -89,10 +128,14 @@ input[type="radio"] {
     transform: scale(1.1);
 
 }
-.button{
+/* .button{
     background-color: rgba(14, 26, 32, 0.7);
     border-radius: 4px;
     color: white;
+} */
+
+#delete {
+    margin: 20px;
 }
 .button:hover{
     cursor: pointer;
